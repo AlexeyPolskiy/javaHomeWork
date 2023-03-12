@@ -5,14 +5,21 @@ package Homework_1;
 import java.util.Scanner;
 
 public class TaskThree {  
-    public static void main(String[] args) {
-        System.out.printf("Введите число a = ");
+    static int inputNamber(Scanner iScanner, String str) {
+        System.out.print(str);
+        int number = iScanner.nextInt();
+        return number;
+    }
 
+    public static void main(String[] args) {
         Scanner iScanner = new Scanner(System.in);
-        int numberOne = iScanner.nextInt();
+
+        // System.out.printf("Введите число a = ");
+        String strOne = "Введите число a = ";
+        int numberOne = inputNamber(iScanner, strOne);
         
-        System.out.printf("Введите число b = ");
-        int numberTwo = iScanner.nextInt();
+        String strTwo = "Введите число b = ";
+        int numberTwo = inputNamber(iScanner, strTwo);
         
         iScanner.close();
         
@@ -25,7 +32,10 @@ public class TaskThree {
         res = numberOne * numberTwo;
         System.out.printf("%d * %d = %d \n", numberOne, numberTwo, res);
 
-        res = numberOne / numberTwo;
-        System.out.printf("%d / %d = %d \n", numberOne, numberTwo, res);
+        double numberOneD = numberOne; 
+        double numberTwoD = numberTwo;
+
+        double result =  numberOneD / numberTwoD;
+        System.out.printf("%d / %d = %.2f \n", numberOne, numberTwo, result);
     }   
 }
